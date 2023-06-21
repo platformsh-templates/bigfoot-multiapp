@@ -1,0 +1,16 @@
+[submodule "mercure"]
+	path = mercure
+	url = https://github.com/platformsh-templates/bigfoot-multiapp-mercure.git
+	branch = with-platform-app-yaml
+[submodule "api"]
+	path = api
+	url = https://github.com/platformsh-templates/bigfoot-multiapp-api.git
+	branch = with-platform-app-yaml
+[submodule "admin"]
+	path = admin
+	url = https://github.com/platformsh-templates/bigfoot-multiapp-admin.git
+	branch = with-platform-app-yaml
+[submodule "gatsby"]
+	path = gatsby
+	url = https://github.com/platformsh-templates/bigfoot-multiapp-gatsby.git
+	branch = with-platform-app-yaml

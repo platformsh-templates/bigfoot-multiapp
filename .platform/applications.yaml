@@ -2,7 +2,7 @@
   type: nodejs:16
 
   source:
-    root: admin/admin-submodule
+    root: admin
 
   build:
     flavor: none
@@ -57,7 +57,7 @@
   type: php:8.2
 
   source:
-    root: api/api-submodule
+    root: api
   dependencies:
     php:
       composer/composer: "^2"
@@ -121,7 +121,7 @@
   type: 'nodejs:18'
 
   source:
-    root: gatsby/gatsby-submodule
+    root: gatsby
 
   disk: 1536
   size: L
@@ -170,7 +170,7 @@
   type: golang:1.18
 
   source:
-    root: mercure/mercure-submodule/.config
+    root: mercure/.config
 
   disk: 2048
   size: L

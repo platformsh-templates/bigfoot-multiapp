@@ -50,7 +50,8 @@
   hooks:
     build: |
       set -eu
-      git submodule
+      git clone https://github.com/platformsh-templates/bigfoot-multiapp-admin.git admin
+      git submodule update --remote admin
       corepack yarn install --immutable --force
     post_deploy: |
       corepack yarn run build

@@ -69,8 +69,10 @@
     operations:
       update-submodule-api:
         command: |
-          set -e
-          git pull
+          git submodule update --init --recursive
+          git submodule update --remote --checkout
+          git add .
+          git commit -m "update all submodules"
   dependencies:
     php:
       composer/composer: "^2"

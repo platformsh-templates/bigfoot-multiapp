@@ -3,7 +3,11 @@
 
   source:
     root: admin
-
+    operations:
+      update-submodule:
+        command: |
+          set -e
+          git pull
   build:
     flavor: none
 
@@ -60,6 +64,11 @@
 
   source:
     root: api
+    operations:
+      update-submodule:
+        command: |
+          set -e
+          git pull
   dependencies:
     php:
       composer/composer: "^2"
@@ -124,6 +133,11 @@
 
   source:
     root: gatsby
+    operations:
+      update-submodule:
+        command: |
+          set -e
+          git pull
 
   disk: 1536
   size: L
@@ -173,6 +187,11 @@
 
   source:
     root: mercure/.config
+    operations:
+      update-submodule:
+        command: |
+          set -e
+          git pull
 
   disk: 2048
   size: L

@@ -7,7 +7,10 @@
       update-submodule:
         command: |
           set -e
-          git pull
+          //git submodule update --init --recursive admin
+          git submodule update --remote --checkout admin
+          git add admin
+          git commit -m "update admin submodule"
   build:
     flavor: none
 

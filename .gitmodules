@@ -1,7 +1,3 @@
-[submodule "admin"]
-	path = admin
-	url = https://github.com/platformsh-templates/bigfoot-multiapp-admin.git
-	branch = without-platform-app-yaml
 [submodule "api"]
 	path = api
 	url = https://github.com/platformsh-templates/bigfoot-multiapp-api.git

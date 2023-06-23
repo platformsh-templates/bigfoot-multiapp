@@ -54,7 +54,6 @@
   hooks:
     build: |
       set -eu
-      git pull
       corepack yarn install --immutable --force
     post_deploy: |
       corepack yarn run build

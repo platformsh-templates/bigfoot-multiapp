@@ -4,10 +4,10 @@
   source:
     root: admin
     operations:
-      update-submodule:
+      update-submodule-admin:
         command: |
           set -e
-          //git submodule update --init --recursive admin
+          git submodule update --init --recursive admin
           git submodule update --remote --checkout admin
           git add admin
           git commit -m "update admin submodule"
@@ -67,7 +67,7 @@
   source:
     root: api
     operations:
-      update-submodule:
+      update-submodule-api:
         command: |
           set -e
           git pull
@@ -136,7 +136,7 @@
   source:
     root: gatsby
     operations:
-      update-submodule:
+      update-submodule-gatsby:
         command: |
           set -e
           git pull
@@ -190,7 +190,7 @@
   source:
     root: mercure/.config
     operations:
-      update-submodule:
+      update-submodule-mercure:
         command: |
           set -e
           git pull

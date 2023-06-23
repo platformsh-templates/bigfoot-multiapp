@@ -7,6 +7,7 @@
       update-submodule-admin:
         command: |
           set -e
+          cd $PLATFORM_SOURCE_DIR
           git submodule update --init --recursive admin
           git submodule update --remote --checkout admin
           git add admin
@@ -69,6 +70,7 @@
     operations:
       update-submodule-api:
         command: |
+          cd $PLATFORM_SOURCE_DIR
           git submodule update --init --recursive
           git submodule update --remote --checkout
           git add .

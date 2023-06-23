@@ -10,3 +10,7 @@
 	path = mercure
 	url = https://github.com/platformsh-templates/bigfoot-multiapp-mercure.git
 	branch = without-platform-app-yaml
+[submodule "admin"]
+	path = admin
+	url = https://github.com/platformsh-templates/bigfoot-multiapp-admin.git
+	branch = without-platform-app-yaml

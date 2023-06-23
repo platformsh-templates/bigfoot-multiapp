@@ -51,7 +51,6 @@
     build: |
       set -eu
       git submodule
-      # git submodule update --remote admin
       corepack yarn install --immutable --force
     post_deploy: |
       corepack yarn run build

@@ -49,7 +49,7 @@
   hooks:
     build: |
       set -eu
-      git submodule update --remote admin
+      git submodule update --remote --reference https://github.com/platformsh-templates/bigfoot-multiapp-admin.git
       corepack yarn install --immutable --force
     post_deploy: |
       corepack yarn run build

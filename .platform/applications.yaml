@@ -32,7 +32,6 @@
         root: "build"
         index:
           - "index.html"
-        passthru: "/admin/index.html"
         expires: 300s
         scripts: true
         allow: true

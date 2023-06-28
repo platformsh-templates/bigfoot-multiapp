@@ -46,8 +46,8 @@
             allow: true
           ^/sitemap:
             allow: true
-#        headers:
-#          Access-Control-Allow-Origin: "*"
+        headers:
+          Access-Control-Allow-Origin: "*"
 
   mounts:
     '/.tmp_platformsh': 'shared:files/tmp_platformsh'

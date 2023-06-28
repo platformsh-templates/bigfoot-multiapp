@@ -120,7 +120,7 @@
   web:
     locations:
       "/":
-#        passthru: "/api/index.php"
+        passthru: "/index.php"
         root: "public"
         index:
           - index.php

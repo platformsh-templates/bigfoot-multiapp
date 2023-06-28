@@ -62,7 +62,7 @@
     post_deploy: |
       corepack yarn run build
 
-- name: api
+- name: app
   type: php:8.2
 
   source:

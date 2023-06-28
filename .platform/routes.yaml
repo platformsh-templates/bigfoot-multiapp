@@ -16,8 +16,8 @@ https://{default}/admin:
 https://{default}:
   type: upstream
   # the first part should be your project name
-  upstream: "api:http"
-  id: api
+  upstream: "app:http"
+  id: app
 
 https://{default}/site:
   type: upstream

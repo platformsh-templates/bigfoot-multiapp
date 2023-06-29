@@ -38,13 +38,13 @@
         rules:
           \.(css|js|gif|jpe?g|png|ttf|eot|woff2?|otf|html|ico|svg?)$:
             allow: true
-          ^/robots\.txt$:
+          ^/admin/robots\.txt$:
             allow: true
-          ^/manifest\.json$:
+          ^/admin/manifest\.json$:
             allow: true
-          ^/_next:
+          ^/admin/_next:
             allow: true
-          ^/sitemap:
+          ^/admin/sitemap:
             allow: true
         headers:
           Access-Control-Allow-Origin: "*"

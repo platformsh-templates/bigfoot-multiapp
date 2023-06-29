@@ -174,7 +174,7 @@
   web:
     locations:
       '/site':
-        passthru: '/site/index.html'
+#        passthru: '/site'
         root: 'public'
         index: [ 'index.html' ]
         scripts: false

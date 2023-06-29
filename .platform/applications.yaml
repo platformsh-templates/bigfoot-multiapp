@@ -174,13 +174,10 @@
   web:
     locations:
       '/site':
-#        passthru: '/site'
         root: 'public'
         index: [ 'index.html' ]
         scripts: false
         allow: true
-        headers:
-          Access-Control-Allow-Origin: "*"
 
   mounts:
     '/.cache':
@@ -189,7 +186,7 @@
     '/.config':
       source: local
       source_path: config
-    'public':
+    '/public':
       source: local
       source_path: public
 

@@ -4,7 +4,7 @@ https://{default}:
   upstream: "app:http"
   id: app
 
-https://admin.{default}:
+https://{default}/admin:
   cache:
     cookies:
     - '*'

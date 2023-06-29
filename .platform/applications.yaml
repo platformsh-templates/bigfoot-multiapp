@@ -122,7 +122,6 @@
   web:
     locations:
       "/":
-        passthru: "/index.php"
         root: "public"
         index:
           - index.php

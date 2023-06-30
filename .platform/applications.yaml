@@ -18,7 +18,6 @@
   variables:
     env:
       NODE_OPTIONS: '--max-old-space-size=1536'
-      GIT_DISCOVERY_ACROSS_FILESYSTEM: 1
 
   size: L
   disk: 1024
@@ -28,23 +27,24 @@
 
   web:
     locations:
-      "/":
+      "/admin":
+        passthru: "/admin/index.html"
         root: "build"
         index:
           - "index.html"
         expires: 300s
         scripts: true
-        allow: false
+        allow: true
         rules:
           \.(css|js|gif|jpe?g|png|ttf|eot|woff2?|otf|html|ico|svg?)$:
             allow: true
-          ^/robots\.txt$:
+          ^/admin/robots\.txt$:
             allow: true
-          ^/manifest\.json$:
+          ^/admin/manifest\.json$:
             allow: true
-          ^/_next:
+          ^/admin/_next:
             allow: true
-          ^/sitemap:
+          ^/admin/sitemap:
             allow: true
         headers:
           Access-Control-Allow-Origin: "*"
@@ -61,8 +61,10 @@
       corepack yarn install --immutable --force
     post_deploy: |
       corepack yarn run build
+  relationships:
+    app: "app:http"
 
-- name: api
+- name: app
   type: php:8.2
 
   source:
@@ -111,7 +113,7 @@
 
   relationships:
     database: "database:postgresql"
-
+    admin: "admin:http"
   mounts:
     "/var/cache": "shared:files/cache"
     "/var/log": "shared:files/log"
@@ -119,8 +121,8 @@
 
   web:
     locations:
-      "/api":
-        passthru: "/api/index.php"
+      "/":
+        passthru: '/index.php'
         root: "public"
         index:
           - index.php
@@ -184,7 +186,7 @@
     '/.config':
       source: local
       source_path: config
-    'public':
+    '/public':
       source: local
       source_path: public
 
@@ -248,3 +250,5 @@
         passthru: true
         request_buffering:
           enabled: false
+        headers:
+          Access-Control-Allow-Origin: "*"

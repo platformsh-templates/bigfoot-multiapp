@@ -126,8 +126,8 @@
         root: "public"
         index:
           - index.php
-#        scripts: true
-#        allow: true
+        scripts: true
+        allow: true
         headers:
           Access-Control-Allow-Origin: "*"
 
@@ -250,3 +250,5 @@
         passthru: true
         request_buffering:
           enabled: false
+        headers:
+          Access-Control-Allow-Origin: "*"

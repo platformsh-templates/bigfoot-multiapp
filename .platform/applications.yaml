@@ -1,0 +1,254 @@
+- name: admin
+  type: nodejs:16
+
+  source:
+    root: admin
+    operations:
+      update-submodule-admin:
+        command: |
+          set -e
+          cd $PLATFORM_SOURCE_DIR
+          git submodule update --init --recursive admin
+          git submodule update --remote --checkout admin
+          git add admin
+          git commit -m "update admin submodule"
+  build:
+    flavor: none
+
+  variables:
+    env:
+      NODE_OPTIONS: '--max-old-space-size=1536'
+
+  size: L
+  disk: 1024
+  resources:
+    base_memory: 1024
+    memory_ratio: 1024
+
+  web:
+    locations:
+      "/admin":
+        passthru: "/admin/index.html"
+        root: "build"
+        index:
+          - "index.html"
+        expires: 300s
+        scripts: true
+        allow: true
+        rules:
+          \.(css|js|gif|jpe?g|png|ttf|eot|woff2?|otf|html|ico|svg?)$:
+            allow: true
+          ^/admin/robots\.txt$:
+            allow: true
+          ^/admin/manifest\.json$:
+            allow: true
+          ^/admin/_next:
+            allow: true
+          ^/admin/sitemap:
+            allow: true
+        headers:
+          Access-Control-Allow-Origin: "*"
+
+  mounts:
+    '/.tmp_platformsh': 'shared:files/tmp_platformsh'
+    '/build': 'shared:files/build'
+    '/.cache': 'shared:files/.cache'
+    '/node_modules/.cache': 'shared:files/node_modules/.cache'
+
+  hooks:
+    build: |
+      set -eu
+      corepack yarn install --immutable --force
+    post_deploy: |
+      corepack yarn run build
+  relationships:
+    app: "app:http"
+
+- name: app
+  type: php:8.2
+
+  source:
+    root: api
+    operations:
+      update-submodule-api:
+        command: |
+          cd $PLATFORM_SOURCE_DIR
+          git submodule update --init --recursive
+          git submodule update --remote --checkout
+          git add .
+          git commit -m "update all submodules"
+  dependencies:
+    php:
+      composer/composer: "^2"
+
+  disk: 2048
+  build:
+    flavor: composer
+
+  runtime:
+    extensions:
+      - ctype
+      - iconv
+      - apcu
+      - mbstring
+      - sodium
+      - xsl
+      - pdo_pgsql
+
+  variables:
+    env:
+      APP_ENV: 'prod'
+    php:
+      assert.active: off
+  hooks:
+    build: |
+      set -x -e
+      
+      curl -s https://get.symfony.com/cloud/configurator | bash
+      symfony-build
+    deploy: |
+      set -x -e
+      
+      symfony-deploy
+
+  relationships:
+    database: "database:postgresql"
+    admin: "admin:http"
+  mounts:
+    "/var/cache": "shared:files/cache"
+    "/var/log": "shared:files/log"
+    "/var/sessions": "shared:files/sessions"
+
+  web:
+    locations:
+      "/":
+        passthru: '/index.php'
+        root: "public"
+        index:
+          - index.php
+        scripts: true
+        allow: true
+        headers:
+          Access-Control-Allow-Origin: "*"
+
+  crons:
+    update-sighting:
+      spec: '*/5 * * * *'
+      cmd: './bin/console app:update-sighting-scores'
+
+- name: 'gatsby'
+  type: 'nodejs:18'
+
+  source:
+    root: gatsby
+    operations:
+      update-submodule-gatsby:
+        command: |
+          set -e
+          git pull
+
+  disk: 1536
+  size: L
+  resources:
+    base_memory: 1024
+    memory_ratio: 1024
+
+  dependencies:
+    nodejs:
+      yarn: "1.22.17"
+
+  build:
+    flavor: none
+
+  variables:
+    env:
+      NODE_OPTIONS: --max-old-space-size=1536
+
+  hooks:
+    build: |
+      set -e
+      yarn --frozen-lockfile
+    post_deploy: |
+      yarn build --prefix-paths
+
+  web:
+    locations:
+      '/site':
+        root: 'public'
+        index: [ 'index.html' ]
+        scripts: false
+        allow: true
+
+  mounts:
+    '/.cache':
+      source: local
+      source_path: cache
+    '/.config':
+      source: local
+      source_path: config
+    '/public':
+      source: local
+      source_path: public
+
+- name: mercure
+  type: golang:1.18
+
+  source:
+    root: mercure/.config
+    operations:
+      update-submodule-mercure:
+        command: |
+          set -e
+          git pull
+
+  disk: 2048
+  size: L
+  build:
+    flavor: none
+
+  variables:
+    env:
+      MERCUREVERSION: 0.14.4
+      SERVER_NAME: ":8888"
+      MERCURE_TRANSPORT_URL: "bolt:///var/run/mercure.db?size=1000&cleanup_frequency=0.5"
+      MERCURE_EXTRA_DIRECTIVES: |
+        cors_origin *
+        publish_origins *
+        subscriptions
+        demo
+      GLOBAL_OPTIONS: |
+        auto_https off
+      MERCURE_PUBLISHER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
+      MERCURE_SUBSCRIBER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
+
+  mounts:
+    "database": { source: local, source_path: "database" }
+    "/.local": { source: local, source_path: .local }
+    "/.config": { source: local, source_path: .config }
+
+  hooks:
+    build: |
+      #Install Mercure using cache
+      echo "${MERCUREVERSION}"
+      FILE="mercure_${MERCUREVERSION}_Linux_x86_64.tar.gz"
+      if [ ! -f "$PLATFORM_CACHE_DIR/$FILE" ]; then
+        URL="https://github.com/dunglas/mercure/releases/download/v${MERCUREVERSION}/$FILE"
+        echo "Downloading $URL"
+        wget -O "$PLATFORM_CACHE_DIR/$FILE" $URL
+      else
+        echo "Found $FILE in cache, using cache"
+      fi
+      file $PLATFORM_CACHE_DIR/$FILE
+      tar xvzf $PLATFORM_CACHE_DIR/$FILE
+  web:
+    commands:
+      start: ./mercure run --config Caddyfile.platform_sh
+    locations:
+      /:
+        allow: true
+        scripts: false
+        passthru: true
+        request_buffering:
+          enabled: false
+        headers:
+          Access-Control-Allow-Origin: "*"

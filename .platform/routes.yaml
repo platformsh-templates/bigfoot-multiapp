@@ -1,4 +1,8 @@
-https://{default}:
+https://{default}/admin:
+  type: upstream
+  # the first part should be your project name
+  upstream: admin:http
+  id: admin
   cache:
     cookies:
     - '*'
@@ -9,20 +13,12 @@ https://{default}:
     - Accept-Language
   ssi:
     enabled: false
-  type: upstream
-  upstream: admin:http
-  id: admin
 
-https://{default}/api:
+https://{default}:
   type: upstream
   # the first part should be your project name
-  upstream: "api:http"
-  id: api
-
-https://{default}/sf:
-  type: upstream
-  # the first part should be your project name
-  upstream: "api:http"
+  upstream: "app:http"
+  id: app
 
 https://{default}/site:
   type: upstream
@@ -32,6 +28,7 @@ https://{default}/site:
 
 https://mercure.{default}:
   type: upstream
+  # the first part should be your project name
   upstream: "mercure:http"
   id: mercure
   cache:

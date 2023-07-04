@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita5c11e82dfb1fdd105ace0dba0a11707
+class ComposerStaticInitdaeca1db68296fc18d35d8ef0a9e8409
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -70,6 +70,7 @@ class ComposerStaticInita5c11e82dfb1fdd105ace0dba0a11707
             'Symfony\\Component\\Routing\\' => 26,
             'Symfony\\Component\\PropertyInfo\\' => 31,
             'Symfony\\Component\\PropertyAccess\\' => 33,
+            'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\PasswordHasher\\' => 33,
             'Symfony\\Component\\OptionsResolver\\' => 34,
             'Symfony\\Component\\Mercure\\' => 26,
@@ -322,6 +323,10 @@ class ComposerStaticInita5c11e82dfb1fdd105ace0dba0a11707
         'Symfony\\Component\\PropertyAccess\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/property-access',
+        ),
+        'Symfony\\Component\\Process\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/process',
         ),
         'Symfony\\Component\\PasswordHasher\\' => 
         array (
@@ -2892,6 +2897,7 @@ class ComposerStaticInita5c11e82dfb1fdd105ace0dba0a11707
         'Faker\\Provider\\nl_NL\\PhoneNumber' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/PhoneNumber.php',
         'Faker\\Provider\\nl_NL\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Text.php',
         'Faker\\Provider\\pl_PL\\Address' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/Address.php',
+        'Faker\\Provider\\pl_PL\\Color' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/Color.php',
         'Faker\\Provider\\pl_PL\\Company' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/Company.php',
         'Faker\\Provider\\pl_PL\\Internet' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/Internet.php',
         'Faker\\Provider\\pl_PL\\LicensePlate' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/LicensePlate.php',
@@ -3441,6 +3447,7 @@ class ComposerStaticInita5c11e82dfb1fdd105ace0dba0a11707
         'Monolog\\Processor\\GitProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/GitProcessor.php',
         'Monolog\\Processor\\HostnameProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/HostnameProcessor.php',
         'Monolog\\Processor\\IntrospectionProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/IntrospectionProcessor.php',
+        'Monolog\\Processor\\LoadAverageProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/LoadAverageProcessor.php',
         'Monolog\\Processor\\MemoryPeakUsageProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/MemoryPeakUsageProcessor.php',
         'Monolog\\Processor\\MemoryProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/MemoryProcessor.php',
         'Monolog\\Processor\\MemoryUsageProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Processor/MemoryUsageProcessor.php',
@@ -4187,6 +4194,7 @@ class ComposerStaticInita5c11e82dfb1fdd105ace0dba0a11707
         'Symfony\\Bundle\\MakerBundle\\Maker\\MakeUser' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Maker/MakeUser.php',
         'Symfony\\Bundle\\MakerBundle\\Maker\\MakeValidator' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Maker/MakeValidator.php',
         'Symfony\\Bundle\\MakerBundle\\Maker\\MakeVoter' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Maker/MakeVoter.php',
+        'Symfony\\Bundle\\MakerBundle\\Maker\\Security\\MakeFormLogin' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Maker/Security/MakeFormLogin.php',
         'Symfony\\Bundle\\MakerBundle\\Renderer\\FormTypeRenderer' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Renderer/FormTypeRenderer.php',
         'Symfony\\Bundle\\MakerBundle\\Security\\InteractiveSecurityHelper' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Security/InteractiveSecurityHelper.php',
         'Symfony\\Bundle\\MakerBundle\\Security\\SecurityConfigUpdater' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Security/SecurityConfigUpdater.php',
@@ -4205,12 +4213,14 @@ class ComposerStaticInita5c11e82dfb1fdd105ace0dba0a11707
         'Symfony\\Bundle\\MakerBundle\\Util\\ClassNameDetails' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Util/ClassNameDetails.php',
         'Symfony\\Bundle\\MakerBundle\\Util\\ClassNameValue' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Util/ClassNameValue.php',
         'Symfony\\Bundle\\MakerBundle\\Util\\ClassSourceManipulator' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Util/ClassSourceManipulator.php',
+        'Symfony\\Bundle\\MakerBundle\\Util\\CliOutputHelper' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Util/CliOutputHelper.php',
         'Symfony\\Bundle\\MakerBundle\\Util\\ComposeFileManipulator' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Util/ComposeFileManipulator.php',
         'Symfony\\Bundle\\MakerBundle\\Util\\ComposerAutoloaderFinder' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Util/ComposerAutoloaderFinder.php',
         'Symfony\\Bundle\\MakerBundle\\Util\\MakerFileLinkFormatter' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Util/MakerFileLinkFormatter.php',
         'Symfony\\Bundle\\MakerBundle\\Util\\PhpCompatUtil' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Util/PhpCompatUtil.php',
         'Symfony\\Bundle\\MakerBundle\\Util\\PrettyPrinter' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Util/PrettyPrinter.php',
         'Symfony\\Bundle\\MakerBundle\\Util\\TemplateComponentGenerator' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Util/TemplateComponentGenerator.php',
+        'Symfony\\Bundle\\MakerBundle\\Util\\TemplateLinter' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Util/TemplateLinter.php',
         'Symfony\\Bundle\\MakerBundle\\Util\\UseStatementGenerator' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Util/UseStatementGenerator.php',
         'Symfony\\Bundle\\MakerBundle\\Util\\YamlManipulationFailedException' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Util/YamlManipulationFailedException.php',
         'Symfony\\Bundle\\MakerBundle\\Util\\YamlSourceManipulator' => __DIR__ . '/..' . '/symfony/maker-bundle/src/Util/YamlSourceManipulator.php',
@@ -5586,6 +5596,23 @@ class ComposerStaticInita5c11e82dfb1fdd105ace0dba0a11707
         'Symfony\\Component\\PasswordHasher\\Hasher\\UserPasswordHasherInterface' => __DIR__ . '/..' . '/symfony/password-hasher/Hasher/UserPasswordHasherInterface.php',
         'Symfony\\Component\\PasswordHasher\\LegacyPasswordHasherInterface' => __DIR__ . '/..' . '/symfony/password-hasher/LegacyPasswordHasherInterface.php',
         'Symfony\\Component\\PasswordHasher\\PasswordHasherInterface' => __DIR__ . '/..' . '/symfony/password-hasher/PasswordHasherInterface.php',
+        'Symfony\\Component\\Process\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/symfony/process/Exception/ExceptionInterface.php',
+        'Symfony\\Component\\Process\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/symfony/process/Exception/InvalidArgumentException.php',
+        'Symfony\\Component\\Process\\Exception\\LogicException' => __DIR__ . '/..' . '/symfony/process/Exception/LogicException.php',
+        'Symfony\\Component\\Process\\Exception\\ProcessFailedException' => __DIR__ . '/..' . '/symfony/process/Exception/ProcessFailedException.php',
+        'Symfony\\Component\\Process\\Exception\\ProcessSignaledException' => __DIR__ . '/..' . '/symfony/process/Exception/ProcessSignaledException.php',
+        'Symfony\\Component\\Process\\Exception\\ProcessTimedOutException' => __DIR__ . '/..' . '/symfony/process/Exception/ProcessTimedOutException.php',
+        'Symfony\\Component\\Process\\Exception\\RuntimeException' => __DIR__ . '/..' . '/symfony/process/Exception/RuntimeException.php',
+        'Symfony\\Component\\Process\\ExecutableFinder' => __DIR__ . '/..' . '/symfony/process/ExecutableFinder.php',
+        'Symfony\\Component\\Process\\InputStream' => __DIR__ . '/..' . '/symfony/process/InputStream.php',
+        'Symfony\\Component\\Process\\PhpExecutableFinder' => __DIR__ . '/..' . '/symfony/process/PhpExecutableFinder.php',
+        'Symfony\\Component\\Process\\PhpProcess' => __DIR__ . '/..' . '/symfony/process/PhpProcess.php',
+        'Symfony\\Component\\Process\\Pipes\\AbstractPipes' => __DIR__ . '/..' . '/symfony/process/Pipes/AbstractPipes.php',
+        'Symfony\\Component\\Process\\Pipes\\PipesInterface' => __DIR__ . '/..' . '/symfony/process/Pipes/PipesInterface.php',
+        'Symfony\\Component\\Process\\Pipes\\UnixPipes' => __DIR__ . '/..' . '/symfony/process/Pipes/UnixPipes.php',
+        'Symfony\\Component\\Process\\Pipes\\WindowsPipes' => __DIR__ . '/..' . '/symfony/process/Pipes/WindowsPipes.php',
+        'Symfony\\Component\\Process\\Process' => __DIR__ . '/..' . '/symfony/process/Process.php',
+        'Symfony\\Component\\Process\\ProcessUtils' => __DIR__ . '/..' . '/symfony/process/ProcessUtils.php',
         'Symfony\\Component\\PropertyAccess\\Exception\\AccessException' => __DIR__ . '/..' . '/symfony/property-access/Exception/AccessException.php',
         'Symfony\\Component\\PropertyAccess\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/symfony/property-access/Exception/ExceptionInterface.php',
         'Symfony\\Component\\PropertyAccess\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/symfony/property-access/Exception/InvalidArgumentException.php',
@@ -7118,10 +7145,10 @@ class ComposerStaticInita5c11e82dfb1fdd105ace0dba0a11707
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita5c11e82dfb1fdd105ace0dba0a11707::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita5c11e82dfb1fdd105ace0dba0a11707::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInita5c11e82dfb1fdd105ace0dba0a11707::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInita5c11e82dfb1fdd105ace0dba0a11707::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitdaeca1db68296fc18d35d8ef0a9e8409::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitdaeca1db68296fc18d35d8ef0a9e8409::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitdaeca1db68296fc18d35d8ef0a9e8409::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitdaeca1db68296fc18d35d8ef0a9e8409::$classMap;
 
         }, null, ClassLoader::class);
     }

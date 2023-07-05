@@ -1,3 +1,9 @@
+https://{default}:
+  type: upstream
+  # the first part should be your project name
+  upstream: "app:http"
+  id: app
+
 https://{default}/admin:
   type: upstream
   # the first part should be your project name
@@ -13,12 +19,6 @@ https://{default}/admin:
     - Accept-Language
   ssi:
     enabled: false
-
-https://{default}:
-  type: upstream
-  # the first part should be your project name
-  upstream: "app:http"
-  id: app
 
 https://{default}/site:
   type: upstream

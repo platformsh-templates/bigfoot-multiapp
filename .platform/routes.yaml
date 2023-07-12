@@ -1,6 +1,10 @@
+# The routes of the project.
+#
+# Each route describes how an incoming URL is going
+# to be processed by Platform.sh.
+# More information: https://docs.platform.sh/define-routes.html
 https://{default}:
   type: upstream
-  # the first part should be your project name
   upstream: "app:http"
   id: app
 
@@ -8,7 +12,8 @@ https://{default}/admin:
   type: upstream
   # the first part should be your project name
   upstream: admin:http
-  id: admin
+  ssi:
+    enabled: false
   cache:
     cookies:
     - '*'
@@ -17,19 +22,16 @@ https://{default}/admin:
     headers:
     - Accept
     - Accept-Language
-  ssi:
-    enabled: false
+  id: admin
 
 https://{default}/site:
   type: upstream
-  # the first part should be your project name
   upstream: "gatsby:http"
   id: gatsby
 
 https://mercure.{default}:
   type: upstream
-  # the first part should be your project name
   upstream: "mercure:http"
-  id: mercure
   cache:
     enabled: false
+  id: mercure

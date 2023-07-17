@@ -61,8 +61,6 @@
       corepack yarn install --immutable --force
     post_deploy: |
       corepack yarn run build
-  relationships:
-    app: "app:http"
 
 - name: api
   type: php:8.2

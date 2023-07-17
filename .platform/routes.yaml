@@ -5,8 +5,8 @@
 # More information: https://docs.platform.sh/define-routes.html
 https://{default}:
   type: upstream
-  upstream: "app:http"
-  id: app
+  upstream: "api:http"
+  id: api
 
 https://{default}/admin:
   type: upstream

@@ -5,7 +5,12 @@
 name: update-submodule
 
 # The type of the application to build.
-type: "php:8.2"
+type: "node"
+
+web:
+  commands:
+    start: |
+      sleep infinity
 
 source:
   operations:

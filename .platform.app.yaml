@@ -5,7 +5,7 @@
 name: update-submodule
 
 # The type of the application to build.
-type: "node"
+type: "nodejs:18"
 
 web:
   commands:

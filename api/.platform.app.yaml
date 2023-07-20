@@ -7,10 +7,6 @@ name: api
 # The type of the application to build.
 type: php:8.2
 
-# The internal folder where the app can be found
-source:
-  root: api/api-submodule
-
 # The toolstack used to build the application.
 dependencies:
   php:
@@ -82,3 +78,16 @@ crons:
   update-sighting:
     spec: '*/5 * * * *'
     cmd: './bin/console app:update-sighting-scores'
+
+
+source:
+  root: api/api-submodule
+  operations:
+    rebuild:
+      command: |
+        set -e
+        echo "before submodule update"
+        git submodule update --remote --checkout
+        echo "after submodule update"
+        git add admin api gatsby mercure
+        git commit -m "Updating submodules admin, api, gatsby and mercure"  

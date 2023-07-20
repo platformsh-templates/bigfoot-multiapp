@@ -5,7 +5,7 @@
 name: update-submodule
 
 # The type of the application to build.
-type: "html"
+type: "php:8.2"
 
 source:
   operations:

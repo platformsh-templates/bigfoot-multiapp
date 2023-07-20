@@ -5,7 +5,7 @@
 name: update-submodule
 
 # The type of the application to build.
-type: html
+type: "html"
 
 source:
   operations:

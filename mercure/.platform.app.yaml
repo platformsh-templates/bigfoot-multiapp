@@ -1,20 +1,44 @@
-# This file describes an application. You can have multiple applications
-# in the same project.
+# Complete list of all available properties: https://docs.platform.sh/create-apps/app-reference.html
 
-# The name of this app. Must be unique within a project.
+# A unique name for the app. Must be lowercase alphanumeric characters. Changing the name destroys data associated
+# with the app.
 name: mercure
 
-# The type of the application to build.
+# The runtime the application uses.
+# Complete list of available runtimes: https://docs.platform.sh/create-apps/app-reference.html#types
 type: golang:1.18
 
-# The internal folder where the app can be found
-source:
-  root: mercure/mercure-submodule/.config
+# Resources and CPU to allocate to the service
+# Complete list of available sizes: https://docs.platform.sh/create-apps/app-reference.html#sizes
+size: L
 
-# The toolstack used to build the application.
-build:
-  flavor: none
+# The size of the persistent disk of the application (in MB). Minimum value is 128.
+disk: 2048
 
+# Mounts define directories that are writable after the build is complete. If set as a local source, disk property is required.
+# More information: https://docs.platform.sh/create-apps/app-reference.html#mounts
+mounts:
+  "database": { source: local, source_path: "database" }
+  "/.local": { source: local, source_path: .local }
+  "/.config": { source: local, source_path: .config }
+
+# The web key configures the web server running in front of your app.
+# More information: https://docs.platform.sh/create-apps/app-reference.html#web
+web:
+  commands:
+    start: ./mercure run --config Caddyfile.platform_sh
+  locations:
+    /:
+      allow: true
+      scripts: false
+      passthru: true
+      request_buffering:
+        enabled: false
+      headers:
+        Access-Control-Allow-Origin: "*"
+
+# Define variables used by this app (env, runtime settings, ...)
+# https://docs.platform.sh/create-apps/app-reference.html#variables
 variables:
   env:
     MERCUREVERSION: 0.14.4
@@ -30,14 +54,13 @@ variables:
     MERCURE_PUBLISHER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
     MERCURE_SUBSCRIBER_JWT_KEY: "!ChangeThisMercureHubJWTSecretKey!"
 
-disk: 2048
-size: L
+# Specifies a default set of build tasks to run. Flavors are language-specific.
+# More information: https://docs.platform.sh/create-apps/app-reference.html#build
+build:
+  flavor: none
 
-mounts:
-  "database": { source: local, source_path: "database" }
-  "/.local": { source: local, source_path: .local }
-  "/.config": { source: local, source_path: .config }
-
+# Hooks allow you to customize your code/environment as the project moves through the build and deploy stages
+# More information: https://docs.platform.sh/create-apps/app-reference.html#hooks
 hooks:
   build: |
     #Install Mercure using cache
@@ -52,15 +75,8 @@ hooks:
     fi
     file $PLATFORM_CACHE_DIR/$FILE
     tar xvzf $PLATFORM_CACHE_DIR/$FILE
-web:
-  commands:
-    start: ./mercure run --config Caddyfile.platform_sh
-  locations:
-    /:
-      allow: true
-      scripts: false
-      passthru: true
-      request_buffering:
-        enabled: false
-      headers:
-        Access-Control-Allow-Origin: "*"
+
+# Information on the app’s source code and operations that can be run on it.
+# More information: https://docs.platform.sh/create-apps/app-reference.html#source
+source:
+  root: mercure/mercure-submodule/.config

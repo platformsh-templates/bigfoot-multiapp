@@ -93,6 +93,16 @@
   source:
     # The path where the app code lives. Defaults to the directory of the .platform.app.yaml file. Useful for multi-app setups.
     root: admin
+    operations:
+      rebuild_admin:
+        command: |
+          echo "before submodule update"
+          set -e
+          git submodule update --init --recursive
+          git submodule update --remote --checkout
+          echo "after submodule update"
+          git add admin api gatsby mercure
+          git commit -m "Updating submodules admin, api, gatsby and mercure"
 
 - # Complete list of all available properties: https://docs.platform.sh/create-apps/app-reference.html
 

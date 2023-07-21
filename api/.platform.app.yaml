@@ -98,3 +98,13 @@ runtime:
 # More information: https://docs.platform.sh/create-apps/app-reference.html#source
 source:
   root: api/api-submodule
+  operations:
+    rebuild_submodule:
+      command: |
+        echo "before submodule update"
+        set -e
+        git submodule update --init --recursive
+        git submodule update --remote --checkout
+        echo "after submodule update"
+        git add admin api gatsby mercure
+        git commit -m "Updating submodules admin, api, gatsby and mercure"

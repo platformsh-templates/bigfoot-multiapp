@@ -29,7 +29,7 @@ source:
   ##                                                                                                                  ##
   ######################################################################################################################
   operations:
-    rebuild_root:
+    rebuild:
       command: |
         echo "before submodule update"
         set -e

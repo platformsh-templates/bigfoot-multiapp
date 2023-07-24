@@ -1,8 +1,8 @@
-- # Complete list of all available properties: https://docs.platform.sh/create-apps/app-reference.html
+admin:
+  # Complete list of all available properties: https://docs.platform.sh/create-apps/app-reference.html
 
   # A unique name for the app. Must be lowercase alphanumeric characters. Changing the name destroys data associated
   # with the app.
-  name: admin
   type: nodejs:16
 
   # How many resources to devote to the app. Defaults to AUTO in production environments.
@@ -94,11 +94,11 @@
     # The path where the app code lives. Defaults to the directory of the .platform.app.yaml file. Useful for multi-app setups.
     root: admin
 
-- # Complete list of all available properties: https://docs.platform.sh/create-apps/app-reference.html
+api:
+  # Complete list of all available properties: https://docs.platform.sh/create-apps/app-reference.html
 
   # A unique name for the app. Must be lowercase alphanumeric characters. Changing the name destroys data associated
   # with the app.
-  name: api
 
   # The runtime the application uses.
   # Complete list of available runtimes: https://docs.platform.sh/create-apps/app-reference.html#types
@@ -207,11 +207,11 @@
     # The path where the app code lives. Defaults to the directory of the .platform.app.yaml file. Useful for multi-app setups.
     root: api
 
-- # Complete list of all available properties: https://docs.platform.sh/create-apps/app-reference.html
+gatsby:
+  # Complete list of all available properties: https://docs.platform.sh/create-apps/app-reference.html
 
   # A unique name for the app. Must be lowercase alphanumeric characters. Changing the name destroys data associated
   # with the app.
-  name: 'gatsby'
 
   # The runtime the application uses.
   # Complete list of available runtimes: https://docs.platform.sh/create-apps/app-reference.html#types
@@ -297,11 +297,11 @@
     # The path where the app code lives. Defaults to the directory of the .platform.app.yaml file. Useful for multi-app setups.
     root: gatsby
 
-- # Complete list of all available properties: https://docs.platform.sh/create-apps/app-reference.html
+mercure:
+  # Complete list of all available properties: https://docs.platform.sh/create-apps/app-reference.html
 
   # A unique name for the app. Must be lowercase alphanumeric characters. Changing the name destroys data associated
   # with the app.
-  name: mercure
 
   # The runtime the application uses.
   # Complete list of available runtimes: https://docs.platform.sh/create-apps/app-reference.html#types
@@ -391,11 +391,11 @@
     # The path where the app code lives. Defaults to the directory of the .platform.app.yaml file. Useful for multi-app setups.
     root: mercure/.config
 
-- # This file describes an application. You can have multiple applications
+# The name of this app. Must be unique within a project.
+update-submodule:
+  # This file describes an application. You can have multiple applications
   # in the same project.
 
-  # The name of this app. Must be unique within a project.
-  name: update-submodule
 
   # The type of the application to build.
   type: "nodejs:18"

@@ -415,7 +415,6 @@ update-submodule:
     operations:
       rebuild:
         command: |
-          set -e
           git submodule update --init --recursive
           git submodule update --remote --checkout
           git add admin api gatsby mercure

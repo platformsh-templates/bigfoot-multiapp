@@ -21,9 +21,7 @@ api:
   # Mounts define directories that are writable after the build is complete. If set as a local source, disk property is required.
   # More information: https://docs.platform.sh/create-apps/app-reference.html#mounts
   mounts:
-    "/var/cache": "shared:files/cache"
-    "/var/log": "shared:files/log"
-    "/var/sessions": "shared:files/sessions"
+    "/var": { source: local, source_path: var }
 
   # The web key configures the web server running in front of your app.
   # More information: https://docs.platform.sh/create-apps/app-reference.html#web
@@ -129,10 +127,10 @@ admin:
   # Mounts define directories that are writable after the build is complete. If set as a local source, disk property is required.
   # More information: https://docs.platform.sh/create-apps/app-reference.html#mounts
   mounts:
-    '/.tmp_platformsh': 'shared:files/tmp_platformsh'
-    '/build': 'shared:files/build'
-    '/.cache': 'shared:files/.cache'
-    '/node_modules/.cache': 'shared:files/node_modules/.cache'
+    '/.tmp_platformsh': { source: local, source_path: files/tmp_platformsh }
+    '/build': { source: local, source_path: files/build }
+    '/.cache': { source: local, source_path: files/.cache }
+    '/node_modules/.cache': { source: local, source_path: files/node_modules/.cache }
 
   # The web key configures the web server running in front of your app.
   # More information: https://docs.platform.sh/create-apps/app-reference.html#web
@@ -228,15 +226,9 @@ gatsby:
   # Mounts define directories that are writable after the build is complete. If set as a local source, disk property is required.
   # More information: https://docs.platform.sh/create-apps/app-reference.html#mounts
   mounts:
-    '/.cache':
-      source: local
-      source_path: cache
-    '/.config':
-      source: local
-      source_path: config
-    '/public':
-      source: local
-      source_path: public
+    "/.cache": { source: local, source_path: cache }
+    "/.config": { source: local, source_path: config }
+    "/public": { source: local, source_path: public }
 
   # The web key configures the web server running in front of your app.
   # More information: https://docs.platform.sh/create-apps/app-reference.html#web

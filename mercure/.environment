@@ -2,12 +2,11 @@ export PSH_SITE_URL="$(echo "$PLATFORM_ROUTES" | base64 --decode | jq -r 'to_ent
 export MERCURE_PUBLISHER_JWT_KEY="!ChangeThisMercureHubJWTSecretKey!"
 export MERCURE_SUBSCRIBER_JWT_KEY="!ChangeThisMercureHubJWTSecretKey!"
 export MERCURE_EXTRA_DIRECTIVES="
-             cors_origin *
-             publish_origins *
-             demo true
-             anonymous
-             subscriptions"
-export GLOBAL_OPTIONS="
-             auto_https off"
+  cors_origin *
+  publish_origins *
+  demo true
+  anonymous
+  subscriptions"
+export GLOBAL_OPTIONS="auto_https off"
 export MERCURE_TRANSPORT_URL="bolt:///var/run/mercure.db"
 export SERVER_NAME=":8888"

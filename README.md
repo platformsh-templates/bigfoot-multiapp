@@ -128,14 +128,14 @@ Each of the options below assume that you have already deployed this template to
    1. check that your `api/.env` file contains a valid `DATABASE_URL` to let Symfony connect to your database
        ``` {location="./api/.env""}
        DATABASE_HOST=127.0.0.1
-       DATABASE_PORT=54968
-       DATABASE_NAME=api_platform
-       DATABASE_USER=api_platform
-       DATABASE_PASSWORD=api_platform
+       DATABASE_PORT=52947
+       DATABASE_NAME=app
+       DATABASE_USER=symfony
+       DATABASE_PASSWORD=ChangeMe
        DATABASE_URL="postgresql://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}?serverVersion=14&charset=utf8"
        ```
 
-   1. `symfony console doctrine:schema:create --dump-sql`
+   1. `symfony console doctrine:schema:create --dump-sql` (use `--force` if there any SQL requests displayed)
 
    1. `symfony server:start -d`
 
@@ -148,9 +148,11 @@ Each of the options below assume that you have already deployed this template to
 
 1. Start Gatsby app in a new terminal tab
 
+   1. Open a new terminal using CTRL+T (to be on the same root folder)
+   
    1. `cd ../gatsby`
 
-   1. Install Gatsby CLI
+   1. [Install Gatsby CLI](https://www.gatsbyjs.com/docs/reference/gatsby-cli/)
 
    1. Start Gatsby
    ```
@@ -162,16 +164,21 @@ Each of the options below assume that you have already deployed this template to
    1. open <a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a> in your browser
 
 1. Start Mercure server locally in a new terminal tab
-   ```bash
-   cd ../mercure
-   docker run \
-       -e MERCURE_PUBLISHER_JWT_KEY='!ChangeThisMercureHubJWTSecretKey!' \
-       -e MERCURE_SUBSCRIBER_JWT_KEY='!ChangeThisMercureHubJWTSecretKey!' \
-       -p 8006:80 \
-       -p 8007:443 \
-       dunglas/mercure caddy run --config /etc/caddy/Caddyfile.dev
-   ```
-
+   1. Open a new terminal using CTRL+T (to be on the same root folder)
+   
+   1. ``cd ../mercure``
+   
+   1. create docker Mercure.rocks container 
+      ```bash
+      docker run \
+          -e MERCURE_PUBLISHER_JWT_KEY='!ChangeThisMercureHubJWTSecretKey!' \
+          -e MERCURE_SUBSCRIBER_JWT_KEY='!ChangeThisMercureHubJWTSecretKey!' \
+          -p 8006:80 \
+          -p 8007:443 \
+          dunglas/mercure caddy run --config /etc/caddy/Caddyfile.dev
+      ```
+   1. open [localhost:8007](https://localhost:8007) in your browser  
+  
 1. Start the ADMIN component in a new terminal tab
 
    1. `cd ../admin` (assuming that you were in the `./mercure` folder)

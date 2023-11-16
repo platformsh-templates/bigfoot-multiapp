@@ -153,9 +153,9 @@ applications:
               allow: true
           headers:
             Access-Control-Allow-Origin: "*"
-      commands:
+      #commands:
         # The command to launch your app. If it terminates, it's restarted immediately.
-        start: npm start
+        #start: npm start
     # Variables to control the environment.
     variables:
       env:

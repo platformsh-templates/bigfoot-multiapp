@@ -35,7 +35,6 @@
         "symfony/html-sanitizer": "^6.2",
         "symfony/http-client": "^6.2",
         "symfony/intl": "^6.2",
-        "symfony/maker-bundle": "^1.50",
         "symfony/mercure-bundle": "^0.3.7",
         "symfony/monolog-bundle": "^3.7",
         "symfony/polyfill-intl-messageformatter": "^1.12",
@@ -65,6 +64,7 @@
         "symfony/browser-kit": "^6.2",
         "symfony/css-selector": "^6.2",
         "symfony/debug-bundle": "^6.2",
+        "symfony/maker-bundle": "^1.36",
         "symfony/phpunit-bridge": "^6.2",
         "symfony/stopwatch": "^6.2",
         "symfony/web-profiler-bundle": "^6.2"

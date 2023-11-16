@@ -53,10 +53,10 @@ applications:
 
     # Mounts define directories that are writable after the build is complete. If set as a local source, disk property is required.
     mounts:
-      "/var/cache": { source: local, source_path: files/cache }
-      "/var/log": { source: local, source_path: files/log }
-      "/var/sessions": { source: local, source_path: files/sessions }
-      "/data": { source: local, source_path: "data" }
+      "/var/cache": { source: storage, source_path: files/cache }
+      "/var/log": { source: storage, source_path: files/log }
+      "/var/sessions": { source: storage, source_path: files/sessions }
+      "/data": { source: storage, source_path: "data" }
     # The web key configures the web server running in front of your app.
     web:
       # Each key in locations is a path on your site with a leading /.
@@ -123,10 +123,10 @@ applications:
 
     # Mounts define directories that are writable after the build is complete. If set as a local source, disk property is required.
     mounts:
-      '/.tmp_platformsh': { source: "local", source_path: "tmp_platformsh" }
-      '/build': { source: "local", source_path: "build" }
-      '/.cache': { source: "local", source_path: "cache" }
-      '/node_modules/.cache': { source: "local", source_path: "files/node_modules/.cache" }
+      '/.tmp_platformsh': { source: "storage", source_path: "tmp_platformsh" }
+      '/build': { source: "storage", source_path: "build" }
+      '/.cache': { source: "storage", source_path: "cache" }
+      '/node_modules/.cache': { source: "storage", source_path: "files/node_modules/.cache" }
     # The web key configures the web server running in front of your app.
     web:
 
@@ -187,9 +187,9 @@ applications:
 
     # Mounts define directories that are writable after the build is complete. If set as a local source, disk property is required.
     mounts:
-      '/.cache': { source: "local", source_path: "cache" }
-      '/.config': { source: "local", source_path: "config" }
-      '/public': { source: "local", source_path: "public" }
+      '/.cache': { source: "storage", source_path: "cache" }
+      '/.config': { source: "storage", source_path: "config" }
+      '/public': { source: "storage", source_path: "public" }
     # The web key configures the web server running in front of your app.
     web:
       # Each key in locations is a path on your site with a leading /.
@@ -232,9 +232,9 @@ applications:
 
     # Mounts define directories that are writable after the build is complete. If set as a local source, disk property is required.
     mounts:
-      "database": { source: "local", source_path: "database" }
-      "/.local": { source: "local", source_path: ".local" }
-      "/.config": { source: "local", source_path: ".config" }
+      "database": { source: "storage", source_path: "database" }
+      "/.local": { source: "storage", source_path: ".local" }
+      "/.config": { source: "storage", source_path: ".config" }
     # The web key configures the web server running in front of your app.
     web:
       # Commands are run once after deployment to start the application process.

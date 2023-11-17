@@ -221,8 +221,8 @@ applications:
         set -e
         yarn --frozen-lockfile
       # The post_deploy hook is run after the app container has been started and after it has started accepting requests.
-      deploy: |
-        yarn build --prefix-paths 
+      post_deploy: |
+        yarn build --prefix-paths
     # Information on the app's source code and operations that can be run on it.
     source:
       # The path where the app code lives. Defaults to the directory of the .platform.app.yaml file. Useful for multi-app setups.

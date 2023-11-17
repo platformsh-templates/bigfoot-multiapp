@@ -18,6 +18,7 @@ exports.CookieJar = CookieJar;
 exports.fetchUrl = fetchUrl;
 
 function FetchStream(url, options) {
+    console.log(url);
     Stream.call(this);
 
     options = options || {};

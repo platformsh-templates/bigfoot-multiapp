@@ -39,7 +39,7 @@ module.exports = {
   siteMetadata: {
     title: `Sasquatch Sightings`,
     siteUrl: siteUrl,
-    author: `Platform.sh DevRel`,
+    author: `Upsun DevRel`,
   },
   plugins: [
     `gatsby-transformer-sharp`,

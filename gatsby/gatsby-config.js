@@ -24,13 +24,14 @@ if ('PLATFORM_ROUTES' in process.env) {
       .map(([key, value]) => key)
   // index = 4;
   pathPrefix = '/site'
-  siteUrl = `${result[0]}`;
+  siteUrl = `${result[0]}site`;
   backendURL = `${result[0]}api/graphql`
 
 } else {
   console.log('Running locally.');
 }
 
+console.log(siteUrl)
 console.log(backendURL)
 
 module.exports = {

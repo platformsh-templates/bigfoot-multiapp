@@ -171,7 +171,7 @@ applications:
       # The build hook is run after any build flavor.
       build: |
         set -eu
-        corepack yarn install --immutable --force
+        corepack yarn install --immutable --force 
       # The post_deploy hook is run after the app container has been started and after it has started accepting requests.
       deploy: |
         corepack yarn run build

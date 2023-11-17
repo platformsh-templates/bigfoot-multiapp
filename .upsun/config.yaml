@@ -186,6 +186,8 @@ applications:
   gatsby:
     # The runtime the application uses.
     type: 'nodejs:18'
+    
+    container_profile: BALANCED
 
     # Mounts define directories that are writable after the build is complete. If set as a local source, disk property is required.
     mounts:
@@ -217,7 +219,7 @@ applications:
       # The build hook is run after any build flavor.
       build: |
         set -e
-        yarn --frozen-lockfile 
+        yarn --frozen-lockfile
       # The post_deploy hook is run after the app container has been started and after it has started accepting requests.
       deploy: |
         yarn build --prefix-paths

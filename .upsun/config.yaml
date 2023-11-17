@@ -186,7 +186,7 @@ applications:
   gatsby:
     # The runtime the application uses.
     type: 'nodejs:18'
-    
+
     container_profile: BALANCED
 
     # Mounts define directories that are writable after the build is complete. If set as a local source, disk property is required.
@@ -222,7 +222,7 @@ applications:
         yarn --frozen-lockfile
       # The post_deploy hook is run after the app container has been started and after it has started accepting requests.
       deploy: |
-        yarn build --prefix-paths
+        yarn build --prefix-paths 
     # Information on the app's source code and operations that can be run on it.
     source:
       # The path where the app code lives. Defaults to the directory of the .platform.app.yaml file. Useful for multi-app setups.

@@ -7,6 +7,6 @@ export MERCURE_EXTRA_DIRECTIVES="
   demo true
   anonymous
   subscriptions"
-export GLOBAL_OPTIONS="auto_https off"
+export GLOBAL_OPTIONS="auto_https on"
 export MERCURE_TRANSPORT_URL="bolt:///var/run/mercure.db"
 export SERVER_NAME="localhost:8888"

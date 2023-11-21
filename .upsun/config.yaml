@@ -173,7 +173,7 @@ applications:
         set -eu
         corepack yarn install --immutable --force
       # The post_deploy hook is run after the app container has been started and after it has started accepting requests.
-      deploy: |
+      post_deploy: |
         corepack yarn run build
 
     # Information on the app's source code and operations that can be run on it.

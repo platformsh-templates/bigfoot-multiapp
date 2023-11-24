@@ -12,7 +12,6 @@ function decode(value) {
   return JSON.parse(Buffer.from(value, 'base64'));
 }
 
-
 // Update the backend URL for the current environment if on Platform.sh.
 // if(process.env.PLATFORM_ENVIRONMENT !== 'undefined'){
 if ('PLATFORM_ROUTES' in process.env) {
@@ -20,7 +19,7 @@ if ('PLATFORM_ROUTES' in process.env) {
   console.log('On a Upsun Environment');
   var data = decode(process.env.PLATFORM_ROUTES)
   const result = Object.entries(data)
-      .filter(([key, value]) => value.upstream == "api")
+      .filter(([key, value]) => value.upstream === "api")
       .map(([key, value]) => key)
   // index = 4;
   pathPrefix = '/site'

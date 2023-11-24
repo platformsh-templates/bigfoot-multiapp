@@ -21,18 +21,14 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/platformsh-templates/bigfoot-workshop-with-api/issues">
-<img src="https://img.shields.io/github/issues/platformsh-templates/bigfoot-workshop-with-api.svg?style=for-the-badge&labelColor=f4f2f3&color=ffd9d9&label=Issues" alt="Open issues" />
+<a href="https://github.com/platformsh-templates/bigfoot-multiapp/issues">
+<img src="https://img.shields.io/github/issues/platformsh-templates/bigfoot-multiapp.svg?style=for-the-badge&labelColor=f4f2f3&color=ffd9d9&label=Issues" alt="Open issues" />
 </a>&nbsp&nbsp
-<a href="https://github.com/platformsh-templates/bigfoot-workshop-with-api/pulls">
-<img src="https://img.shields.io/github/issues-pr/platformsh-templates/bigfoot-workshop-with-api.svg?style=for-the-badge&labelColor=f4f2f3&color=ffd9d9&label=Pull%20requests" alt="Open PRs" />
+<a href="https://github.com/platformsh-templates/bigfoot-multiapp/pulls">
+<img src="https://img.shields.io/github/issues-pr/platformsh-templates/bigfoot-multiapp.svg?style=for-the-badge&labelColor=f4f2f3&color=ffd9d9&label=Pull%20requests" alt="Open PRs" />
 </a>&nbsp&nbsp
 </p>
-<p align="center">
-<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/bigfoot-workshop-with-api/multiapp-finished/.platform/metadata/bigfoot-workshop-with-api.template.yaml&utm_content=platformsh-templates&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform" target="_blank">
-    <img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy on Upsun" width="175px">
-</a>
-</p>
+
 
 <hr>
 
@@ -52,7 +48,7 @@
 
 <p>
    We have just created a new multi-app project for you, based on <a href="https://github.com/platformsh-templates/bigfoot-workshop" target="_blank">Bigfoot Project</a>, <a href="https://api-platform.com/docs/admin/" target="_blank">API Platform Admin</a>, <a href="https://www.gatsbyjs.com/" target="_blank">Gatsby</a> and <a href="https://mercure.rocks/" target="_blank">Mercure.rocks server</a>.
-   <BR>The generated code has been setup for a typical web multi-application project hosted on <a href="https://platform.sh/">Upsun</a>.
+   <BR>The generated code has been setup for a typical web multi-application project hosted on <a href="https://upsun.com/">Upsun</a>.
 </p>
 
 ### Features
@@ -64,21 +60,6 @@
 - Mercure server v0.14.4
 
 ## Getting started
-
-### Quickstart
-
-The quickest way to deploy this template on Upsun is by clicking the button below.<br>
-This will automatically create a new project and initialize the repository for you.
-
-<p>
-<a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/bigfoot-workshop-with-api/tree/multiapp-finished/.platform/metadata/bigfoot-workshop-with-api.template.yaml&utm_content=platformsh-template&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform" target="_blank">
-    <img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy on Upsun" width="175px">
-</a>
-</p>
-
-> **Note:**
->
-> Upsun templates prioritize upstream release versions over our own. Despite this, we update template dependencies on a scheduled basis independent of those upstreams. <br>Because of this, template repos do not contain releases. This may change in the future, but until then the `-s dev` flag is necessary to use `composer create-project`.
 
 ### Local development
 
@@ -240,7 +221,7 @@ This repository has all the code it needs in order to deploy to Upsun.
 1. Push using git
 
    ```bash
-   git push platform DEFAULT_BRANCH
+   git push upsun DEFAULT_BRANCH
    ```
 
 1. or Push using platform CLI

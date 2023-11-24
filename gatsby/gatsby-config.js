@@ -7,13 +7,12 @@ let backendURL = "https://localhost:8000/api/graphql"
 let pathPrefix = '/';
 let siteUrl = 'http://localhost:8080/';
 
-// Helper function to decode base64 JSON variables on Platform.sh
+// Helper function to decode base64 JSON variables on Upsun
 function decode(value) {
   return JSON.parse(Buffer.from(value, 'base64'));
 }
 
-// Update the backend URL for the current environment if on Platform.sh.
-// if(process.env.PLATFORM_ENVIRONMENT !== 'undefined'){
+// Update the backend URL for the current environment if on Upsun.
 if ('PLATFORM_ROUTES' in process.env) {
 
   console.log('On an Upsun Environment');

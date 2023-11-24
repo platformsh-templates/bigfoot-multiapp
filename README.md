@@ -6,14 +6,14 @@
 </a>
 </p>
 
-<h1 align="center">Deploy a multi-app project with Bigfoot website, API Platform admin (ReactJS), Gatsby website and Mercure.rocks server on Platform.sh</h1>
+<h1 align="center">Deploy a multi-app project with Bigfoot website, API Platform admin (ReactJS), Gatsby website and Mercure.rocks server on Upsun</h1>
 
 <p align="center">
 <strong>Contribute, request a feature, or check out our resources</strong>
 <br />
 <br />
 <a href="https://community.platform.sh"><strong>Join our community</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-<a href="https://docs.platform.sh"><strong>Documentation</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href="https://docs.upsun.com"><strong>Documentation</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <a href="https://platform.sh/blog"><strong>Blog</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <a href="https://github.com/platformsh-templates/bigfoot-workshop-with-api/issues/new?assignees=&labels=bug&template=bug_report.yml"><strong>Report a bug</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <a href="https://github.com/platformsh-templates/bigfoot-workshop-with-api/issues/new?assignees=&labels=feature+request&template=improvements.yml"><strong>Request a feature</strong></a>
@@ -30,7 +30,7 @@
 </p>
 <p align="center">
 <a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/bigfoot-workshop-with-api/multiapp-finished/.platform/metadata/bigfoot-workshop-with-api.template.yaml&utm_content=platformsh-templates&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform" target="_blank">
-    <img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy on Platform.sh" width="175px">
+    <img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy on Upsun" width="175px">
 </a>
 </p>
 
@@ -52,7 +52,7 @@
 
 <p>
    We have just created a new multi-app project for you, based on <a href="https://github.com/platformsh-templates/bigfoot-workshop" target="_blank">Bigfoot Project</a>, <a href="https://api-platform.com/docs/admin/" target="_blank">API Platform Admin</a>, <a href="https://www.gatsbyjs.com/" target="_blank">Gatsby</a> and <a href="https://mercure.rocks/" target="_blank">Mercure.rocks server</a>.
-   <BR>The generated code has been setup for a typical web multi-application project hosted on <a href="https://platform.sh/">Platform.sh</a>.
+   <BR>The generated code has been setup for a typical web multi-application project hosted on <a href="https://platform.sh/">Upsun</a>.
 </p>
 
 ### Features
@@ -67,26 +67,26 @@
 
 ### Quickstart
 
-The quickest way to deploy this template on Platform.sh is by clicking the button below.<br>
+The quickest way to deploy this template on Upsun is by clicking the button below.<br>
 This will automatically create a new project and initialize the repository for you.
 
 <p>
 <a href="https://console.platform.sh/projects/create-project?template=https://raw.githubusercontent.com/platformsh-templates/bigfoot-workshop-with-api/tree/multiapp-finished/.platform/metadata/bigfoot-workshop-with-api.template.yaml&utm_content=platformsh-template&utm_source=github&utm_medium=button&utm_campaign=deploy_on_platform" target="_blank">
-    <img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy on Platform.sh" width="175px">
+    <img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg" alt="Deploy on Upsun" width="175px">
 </a>
 </p>
 
 > **Note:**
 >
-> Platform.sh templates prioritize upstream release versions over our own. Despite this, we update template dependencies on a scheduled basis independent of those upstreams. <br>Because of this, template repos do not contain releases. This may change in the future, but until then the `-s dev` flag is necessary to use `composer create-project`.
+> Upsun templates prioritize upstream release versions over our own. Despite this, we update template dependencies on a scheduled basis independent of those upstreams. <br>Because of this, template repos do not contain releases. This may change in the future, but until then the `-s dev` flag is necessary to use `composer create-project`.
 
 ### Local development
 
 This section provides instructions for running the `Bigfoot Multi-app` template locally, connected to a local database instance.
 
-In all cases for developing with Platform.sh, it's important to develop on an isolated environment - do not connect to data on your production environment when developing locally.
+In all cases for developing with Upsun, it's important to develop on an isolated environment - do not connect to data on your production environment when developing locally.
 
-Each of the options below assume that you have already deployed this template to Platform.sh, as well as the following starting commands:
+Each of the options below assume that you have already deployed this template to Upsun, as well as the following starting commands:
 
 1. Install the Symfony CLI
 
@@ -102,7 +102,7 @@ Each of the options below assume that you have already deployed this template to
    | PROJECT_ID    | Your Project Name                  | xx-3.platform.sh | your-username                   |
    +---------------+------------------------------------+------------------+---------------------------------+
    ```
-1. Get your Platform.sh project
+1. Get your Upsun project
    ```
    symfony get PROJECT_ID
    cd <PROJECT_FOLDER>
@@ -205,18 +205,18 @@ Each of the options below assume that you have already deployed this template to
    ```
 > **Note:**
 > For many of the steps above, you may need to include the CLI flags `-p PROJECT_ID` and `-e ENVIRONMENT_ID` if you are not in the project directory or if the environment is associated with an existing pull request.
-### Deploying to Platform.sh
+### Deploying to Upsun
 
-This repository has all the code it needs in order to deploy to Platform.sh.
+This repository has all the code it needs in order to deploy to Upsun.
 
 <details>
-<summary>Deploy directly to Platform.sh from the command line</summary>
+<summary>Deploy directly to Upsun from the command line</summary>
 <!-- <blockquote>
 <br/> -->
 
 1. Create a free trial:
 
-   [Register for a 30 day free trial with Platform.sh](https://auth.api.platform.sh/register). When you have completed signup, select the **Create from scratch** project option. Give you project a name, and select a region where you would like it to be deployed. As for the *Production environment* option, make sure to match it to this repository's settings, or to what you have updated the default branch to locally.
+   [Register for a 30 day free trial with Upsun](https://auth.api.upsun.com/register). When you have completed signup, select the **Create from scratch** project option. Give you project a name, and select a region where you would like it to be deployed. As for the *Production environment* option, make sure to match it to this repository's settings, or to what you have updated the default branch to locally.
 
 1. Install the Symfony CLI
 
@@ -260,7 +260,7 @@ This repository has all the code it needs in order to deploy to Platform.sh.
 
 1. Create a free trial:
 
-   [Register for a 30 day free trial with Platform.sh](https://auth.api.platform.sh/register). When you have completed signup, select the **Create from scratch** project option. Give you project a name, and select a region where you would like it to be deployed. As for the *Production environment* option, make sure to match it to whatever you have set at `https://YOUR_NAMESPACE/nextjs-drupal`.
+   [Register for a 30 day free trial with Upsun](https://auth.api.upsun.com/register). When you have completed signup, select the **Create from scratch** project option. Give you project a name, and select a region where you would like it to be deployed. As for the *Production environment* option, make sure to match it to whatever you have set at `https://YOUR_NAMESPACE/nextjs-drupal`.
 
 1. Install the Symfony CLI
 
@@ -269,9 +269,9 @@ This repository has all the code it needs in order to deploy to Platform.sh.
 
 1. Setup the integration:
 
-   Consult the [GitHub integration documentation](https://docs.platform.sh/integrations/source/github.html#setup) to finish connecting your repository to a project on Platform.sh. You will need to create an Access token on GitHub to do so.
+   Consult the [GitHub integration documentation](https://docs.upsun.com/integrations/source/github.html#setup) to finish connecting your repository to a project on Upsun. You will need to create an Access token on GitHub to do so.
 
-1. Then, just use regular GIT commands to push your code to your repository. It will automatically update your corresponding Platform.sh environment
+1. Then, just use regular GIT commands to push your code to your repository. It will automatically update your corresponding Upsun environment
 <!-- <br/>
 </blockquote> -->
 </details>
@@ -283,7 +283,7 @@ This repository has all the code it needs in order to deploy to Platform.sh.
 
 1. Create a free trial:
 
-   [Register for a 30 day free trial with Platform.sh](https://auth.api.platform.sh/register). When you have completed signup, select the **Create from scratch** project option. Give you project a name, and select a region where you would like it to be deployed. As for the *Production environment* option, make sure to match it to this repository's settings, or to what you have updated the default branch to locally.
+   [Register for a 30 day free trial with Upsun](https://auth.api.upsun.com/register). When you have completed signup, select the **Create from scratch** project option. Give you project a name, and select a region where you would like it to be deployed. As for the *Production environment* option, make sure to match it to this repository's settings, or to what you have updated the default branch to locally.
 
 1. Install the Symfony CLI
 
@@ -296,8 +296,8 @@ This repository has all the code it needs in order to deploy to Platform.sh.
 
 1. Setup the integration:
 
-   Consult the [GitLab integration documentation](https://docs.platform.sh/integrations/source/gitlab.html#setup) to finish connecting a repository to a project on Platform.sh. You will need to create an Access token on GitLab to do so.
-1. Then, just use regular GIT commands to push your code to your repository. It will automatically update your corresponding Platform.sh environment
+   Consult the [GitLab integration documentation](https://docs.upsun.com/integrations/source/gitlab.html#setup) to finish connecting a repository to a project on Upsun. You will need to create an Access token on GitLab to do so.
+1. Then, just use regular GIT commands to push your code to your repository. It will automatically update your corresponding Upsun environment
 
 <!-- <br/>
 </blockquote> -->
@@ -310,7 +310,7 @@ This repository has all the code it needs in order to deploy to Platform.sh.
 
 1. Create a free trial:
 
-   [Register for a 30 day free trial with Platform.sh](https://auth.api.platform.sh/register). When you have completed signup, select the **Create from scratch** project option. Give you project a name, and select a region where you would like it to be deployed. As for the *Production environment* option, make sure to match it to this repository's settings, or to what you have updated the default branch to locally.
+   [Register for a 30 day free trial with Upsun](https://auth.api.upsun.com/register). When you have completed signup, select the **Create from scratch** project option. Give you project a name, and select a region where you would like it to be deployed. As for the *Production environment* option, make sure to match it to this repository's settings, or to what you have updated the default branch to locally.
 
 1. Install the Symfony CLI
 
@@ -323,8 +323,8 @@ This repository has all the code it needs in order to deploy to Platform.sh.
 
 1. Setup the integration:
 
-   Consult the [Bitbucket integration documentation](https://docs.platform.sh/integrations/source/bitbucket.html#setup) to finish connecting a repository to a project on Platform.sh. You will need to create an Access token on Bitbucket to do so.
-1. Then, just use regular GIT commands to push your code to your repository. It will automatically update your corresponding Platform.sh environment
+   Consult the [Bitbucket integration documentation](https://docs.upsun.com/integrations/source/bitbucket.html#setup) to finish connecting a repository to a project on Upsun. You will need to create an Access token on Bitbucket to do so.
+1. Then, just use regular GIT commands to push your code to your repository. It will automatically update your corresponding Upsun environment
 
 <!-- <br/>
 </blockquote> -->
@@ -332,12 +332,12 @@ This repository has all the code it needs in order to deploy to Platform.sh.
 
 ### Migrating your data
 
-If you are moving an existing site to Platform.sh, then in addition to code you also need to migrate your data. That means your database and your files.
+If you are moving an existing site to Upsun, then in addition to code you also need to migrate your data. That means your database and your files.
 
 <details>
 <summary>Importing the database</summary><br/>
 
-First, obtain a database dump from your current site and save your dump file as `database.sql`. Then, import the database into your Platform.sh site using the CLI:
+First, obtain a database dump from your current site and save your dump file as `database.sql`. Then, import the database into your Upsun site using the CLI:
 
 ```bash
 symfony sql -e main < database.sql
@@ -366,22 +366,22 @@ Note that `rsync` is picky about its trailing slashes, so be sure to include tho
 
 </details>
 
-With your application now deployed on Platform.sh, things get more interesting.
+With your application now deployed on Upsun, things get more interesting.
 Run the command `symfony environment:branch new-feature` for your project, or open a trivial pull request off of your current branch.
 
 The resulting environment is an *exact* copy of production (or corresponding parent environment).
 It contains identical infrastructure to what's been defined in your configuration files, and even includes data copied from your production environment in its services.
 On this isolated environment, you're free to make any changes to your application you need to, and really test how they will behave on production.
 
-After that, here are a collection of additional resources you might find interesting as you continue with your migration to Platform.sh:
+After that, here are a collection of additional resources you might find interesting as you continue with your migration to Upsun:
 
 [comment]: <> (- [Local development]&#40;#local-development&#41;)
 - [Troubleshooting](#troubleshooting)
-- [Adding a domain and going live](https://docs.platform.sh/domains/steps.html)
-- [(CDN) Content Delivery Networks](https://docs.platform.sh/domains/cdn.html)
-- [Performance and observability with Blackfire.io](https://docs.platform.sh/integrations/observability/blackfire.html)
-- [Pricing](https://docs.platform.sh/overview/pricing.html)
-- [Security and compliance](https://docs.platform.sh/security.html)
+- [Adding a domain and going live](https://docs.upsun.com/domains/steps.html)
+- [(CDN) Content Delivery Networks](https://docs.upsun.com/domains/cdn.html)
+- [Performance and observability with Blackfire.io](https://docs.upsun.com/integrations/observability/blackfire.html)
+- [Pricing](https://docs.upsun.com/overview/pricing.html)
+- [Security and compliance](https://docs.upsun.com/security.html)
 
 
 ## Learn
@@ -399,7 +399,7 @@ symfony ssh
 ```
 
 If you are running the command outside of a local copy of the project, you will need to include the `-p` (project) and/or `-e` (environment) flags as well.
-Once you have connected to the container, [logs](https://docs.platform.sh/development/logs.html#container-logs) are available within `/var/log/` for you to investigate.
+Once you have connected to the container, [logs](https://docs.upsun.com/development/logs.html#container-logs) are available within `/var/log/` for you to investigate.
 
 </details>
 
@@ -418,11 +418,11 @@ php bin/console cache:pool:clear cache.app
 
 ### Blackfire.io: creating a Continuous Observability Strategy
 
-This template includes a starting [`.blackfire.yml`](.blackfire.yml) file that can be used to enable [Application Performance Monitoring](https://blackfire.io/docs/monitoring-cookbooks/index), [Profiling](https://blackfire.io/docs/profiling-cookbooks/index), [Builds](https://blackfire.io/docs/builds-cookbooks/index) and [Performance Testing](https://blackfire.io/docs/testing-cookbooks/index) on your project. Platform.sh comes with Blackfire pre-installed on application containers, and [setting up requires minimal configuration](https://docs.platform.sh/integrations/observability/blackfire.html).
+This template includes a starting [`.blackfire.yml`](.blackfire.yml) file that can be used to enable [Application Performance Monitoring](https://blackfire.io/docs/monitoring-cookbooks/index), [Profiling](https://blackfire.io/docs/profiling-cookbooks/index), [Builds](https://blackfire.io/docs/builds-cookbooks/index) and [Performance Testing](https://blackfire.io/docs/testing-cookbooks/index) on your project. Upsun comes with Blackfire pre-installed on application containers, and [setting up requires minimal configuration](https://docs.upsun.com/integrations/observability/blackfire.html).
 
 * [What is Blackfire?](https://blackfire.io/docs/introduction)
-* [Configuring Blackfire.io on a Platform.sh project](https://docs.platform.sh/integrations/observability/blackfire.html)
-* [Blackfire.io Platform.sh documentation](https://blackfire.io/docs/integrations/paas/platformsh)
+* [Configuring Blackfire.io on a Upsun project](https://docs.upsun.com/integrations/observability/blackfire.html)
+* [Blackfire.io Upsun documentation](https://blackfire.io/docs/integrations/paas/platformsh)
 * [Profiling Cookbooks](https://blackfire.io/docs/profiling-cookbooks/index)
 * [Monitoring Cookbooks](https://blackfire.io/docs/monitoring-cookbooks/index)
 * [Testing Cookbooks](https://blackfire.io/docs/testing-cookbooks/index)
@@ -435,25 +435,25 @@ This template includes a starting [`.blackfire.yml`](.blackfire.yml) file that c
 
 - [API Platform](https://api-platform.com/)
 
-- [Platform.sh PHP documentation](https://docs.platform.sh/languages/php.html)
+- [Upsun PHP documentation](https://docs.upsun.com/languages/php.html)
 
 
 ### Contact
 
-This template is maintained by the Platform.sh Developer Relations team, and they will be notified of all issues and pull requests you open here.
+This template is maintained by the Upsun Developer Relations team, and they will be notified of all issues and pull requests you open here.
 
 - **Community:** Share your question with the community, or see if it's already been asked on our [Community site](https://community.platform.sh).
-- **Slack:** If you haven't done so already, you can join Platform.sh's [public Slack](https://chat.platform.sh/) channels and ping the `@devrel_team` with any questions.
+- **Slack:** If you haven't done so already, you can join Upsun's [public Slack](https://chat.platform.sh/) channels and ping the `@devrel_team` with any questions.
 
 
-### About Platform.sh
+### About Upsun
 
-This template has been specifically designed to deploy on Platform.sh.
+This template has been specifically designed to deploy on Upsun.
 
 <details>
-<summary>What is Platform.sh?</summary><br/>
+<summary>What is Upsun?</summary><br/>
 
-Platform.sh is a unified, secure, enterprise-grade platform for building, running and scaling web applications. We’re the leader in Fleet Ops: Everything you need to manage your fleet of websites and apps is available from the start. Because infrastructure and workflows are handled from the start, apps just work, so teams can focus on what really matters: making faster changes, collaborating confidently, and scaling responsibly. Whether managing a fleet of ten or ten thousand sites and apps, Platform.sh is the Developer- preferred solution that scales right.
+Upsun is a unified, secure, enterprise-grade platform for building, running and scaling web applications. We’re the leader in Fleet Ops: Everything you need to manage your fleet of websites and apps is available from the start. Because infrastructure and workflows are handled from the start, apps just work, so teams can focus on what really matters: making faster changes, collaborating confidently, and scaling responsibly. Whether managing a fleet of ten or ten thousand sites and apps, Upsun is the Developer- preferred solution that scales right.
 
 Our key features include:
 
@@ -463,22 +463,22 @@ Our key features include:
 
 * **Batteries included: Managed infrastructure**
 
-  [Simple abstraction in YAML](https://docs.platform.sh/configuration/yaml.html) for [committing and configuring infrastructure](https://docs.platform.sh/overview/structure.html), fully managed patch updates, and 24 [runtimes](https://docs.platform.sh/languages.html) & [services](https://docs.platform.sh/configuration/services.html) that can be added with a single line of code.
+  [Simple abstraction in YAML](https://docs.upsun.com/configuration/yaml.html) for [committing and configuring infrastructure](https://docs.upsun.com/overview/structure.html), fully managed patch updates, and 24 [runtimes](https://docs.upsun.com/languages.html) & [services](https://docs.upsun.com/configuration/services.html) that can be added with a single line of code.
 
 * **Instant cloning: Branch, merge, repeat**
 
-  [Reusable builds](https://docs.platform.sh/overview/build-deploy.html) and automatically inherited production data provide true staging environments - experiment in isolation, test, then destroy or merge.
+  [Reusable builds](https://docs.upsun.com/overview/build-deploy.html) and automatically inherited production data provide true staging environments - experiment in isolation, test, then destroy or merge.
 
 * **FleetOps: Fleet management platform**
 
-  Leverage our public API along with custom tools like [Source Operations](https://docs.platform.sh/configuration/app/source-operations.html) and [Activity Scripts](https://docs.platform.sh/integrations/activity.html) to [manage thousands of applications](https://youtu.be/MILHG9OqhmE) - their dependency updates, fresh content, and upstream code.
+  Leverage our public API along with custom tools like [Source Operations](https://docs.upsun.com/configuration/app/source-operations.html) and [Activity Scripts](https://docs.upsun.com/integrations/activity.html) to [manage thousands of applications](https://youtu.be/MILHG9OqhmE) - their dependency updates, fresh content, and upstream code.
 
 
 To find out more, check out the demo below and go to our [website](https://platform.sh/product/).
 
 <br/>
 <p align="center">
-<a href="https://platform.sh/demo/"><img src="https://img.youtube.com/vi/ny2YeD6Qt3M/0.jpg" alt="The Platform.sh demo"></a>
+<a href="https://platform.sh/demo/"><img src="https://img.youtube.com/vi/ny2YeD6Qt3M/0.jpg" alt="The Upsun demo"></a>
 </p>
 
 </details>
@@ -487,7 +487,7 @@ To find out more, check out the demo below and go to our [website](https://platf
 
 <h3 align="center">Help us keep top-notch templates!</h3>
 
-Every one of our templates is open source, and they're important resources for users trying to deploy to Platform.sh for the first time or better understand the platform. They act as getting started guides, but also contain a number of helpful tips and best practices when working with certain languages and frameworks.
+Every one of our templates is open source, and they're important resources for users trying to deploy to Upsun for the first time or better understand the platform. They act as getting started guides, but also contain a number of helpful tips and best practices when working with certain languages and frameworks.
 
 See something that's wrong with this template that needs to be fixed? Something in the documentation unclear or missing? Let us know!
 
@@ -503,7 +503,7 @@ See something that's wrong with this template that needs to be fixed? Something 
 <p align="center">
 <strong>Need help?</strong>
 <br /><br />
-<a href="https://community.platform.sh"><strong>Ask the Platform.sh Community</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<a href="https://community.platform.sh"><strong>Ask the Upsun Community</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <a href="https://chat.platform.sh"><strong>Join us on Slack</strong></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <br />
 </p>

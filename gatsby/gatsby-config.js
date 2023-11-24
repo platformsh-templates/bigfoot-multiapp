@@ -30,9 +30,6 @@ if ('PLATFORM_ROUTES' in process.env) {
   console.log('Running locally.');
 }
 
-console.log(siteUrl)
-console.log(backendURL)
-
 module.exports = {
   pathPrefix: pathPrefix,
   siteMetadata: {

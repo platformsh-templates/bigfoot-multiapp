@@ -16,7 +16,7 @@ function decode(value) {
 // if(process.env.PLATFORM_ENVIRONMENT !== 'undefined'){
 if ('PLATFORM_ROUTES' in process.env) {
 
-  console.log('On a Upsun Environment');
+  console.log('On an Upsun Environment');
   var data = decode(process.env.PLATFORM_ROUTES)
   const result = Object.entries(data)
       .filter(([key, value]) => value.upstream === "api")

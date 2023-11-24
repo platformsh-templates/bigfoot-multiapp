@@ -3,7 +3,6 @@
  */
 
 let backendURL = "https://localhost:8000/api/graphql"
-// let index = 3;
 let pathPrefix = '/';
 let siteUrl = 'http://localhost:8080/';
 

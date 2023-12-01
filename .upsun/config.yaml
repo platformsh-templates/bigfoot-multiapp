@@ -114,7 +114,7 @@ applications:
   # A unique name for the app
   admin:
     # The runtime the application uses.
-    type: nodejs:16
+    type: nodejs:18
     # How many resources to devote to the app. Defaults to AUTO in production environments.
 
     # Mounts define directories that are writable after the build is complete. If set as a local source, disk property is required.

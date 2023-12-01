@@ -79,7 +79,7 @@ applications:
     # Installs global dependencies as part of the build process.
     dependencies:
       php:
-        composer/composer: "^2"
+        composer/composer: "2.5.*"
     # Hooks allow you to customize your code/environment as the project moves through the build and deploy stages
     hooks:
       # The build hook is run after any build flavor.

@@ -43,7 +43,7 @@ applications:
   # A unique name for the app
   api:
     # The runtime the application uses.
-    type: php:8.2
+    type: php:8.3
     # The relationships of the application with services or other applications.
     relationships:
       database: "database:postgresql"
@@ -115,7 +115,7 @@ applications:
   # A unique name for the app
   admin:
     # The runtime the application uses.
-    type: nodejs:18
+    type: nodejs:20
     # How many resources to devote to the app. Defaults to AUTO in production environments.
 
     # Mounts define directories that are writable after the build is complete. If set as a local source, disk property is required.
@@ -182,7 +182,7 @@ applications:
   # A unique name for the app
   gatsby:
     # The runtime the application uses.
-    type: 'nodejs:18'
+    type: 'nodejs:20'
 
     container_profile: BALANCED
 
@@ -229,7 +229,7 @@ applications:
   # A unique name for the app
   mercure:
     # The runtime the application uses.
-    type: golang:1.18
+    type: golang:1.21
 
     # Mounts define directories that are writable after the build is complete. If set as a local source, disk property is required.
     mounts:

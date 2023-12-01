@@ -4,6 +4,7 @@ routes:
     type: upstream
     # the first part should be your project name
     upstream: "api:http"
+    id: api
 
   # API Platform Admin component
   https://{default}/admin:
@@ -48,7 +49,10 @@ applications:
 
     # Mounts define directories that are writable after the build is complete. If set as a local source, disk property is required.
     mounts:
-      "/var": { source: storage, source_path: files/cache }
+      "/var/cache": { source: storage }
+      "/var/log": { source: storage }
+      "/var/sessions": { source: storage }
+      "/data": { source: storage }
     # The web key configures the web server running in front of your app.
     web:
       # Each key in locations is a path on your site with a leading /.
@@ -97,6 +101,7 @@ applications:
         # See https://github.com/fabpot/local-php-security-checker
         spec: '50 23 * * *'
         cmd: if [ "$PLATFORM_ENVIRONMENT_TYPE" = "production" ]; then croncape php-security-checker; fi
+
     # Customizations to your PHP or Lisp runtime.
     runtime:
       extensions: [ ctype, iconv, apcu, mbstring, sodium, xsl, pdo_pgsql ]

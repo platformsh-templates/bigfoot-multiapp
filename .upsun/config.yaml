@@ -170,7 +170,7 @@ applications:
         corepack yarn install --immutable --force
       # The post_deploy hook is run after the app container has been started and after it has started accepting requests.
       post_deploy: |
-        corepack yarn run build --prefix-paths
+        corepack yarn build --prefix-paths
 
     # Information on the app's source code and operations that can be run on it.
     source:

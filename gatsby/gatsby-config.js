@@ -19,7 +19,6 @@ if ('PLATFORM_ROUTES' in process.env) {
   const result = Object.entries(data)
       .filter(([key, value]) => value.upstream === "api")
       .map(([key, value]) => key)
-  // index = 4;
   pathPrefix = '/site'
   siteUrl = `${result[0]}site`;
   backendURL = `${result[0]}api/graphql`

@@ -6,9 +6,7 @@ Mercure is especially useful to add streaming capabilities to REST and GraphQL A
 
 See https://mercure.rocks.
 
-<a href="https://console.platform.sh/projects/create-project/?template=https://github.com/platformsh/mercure-rocks-example&utm_campaign=deploy_on_platform?utm_medium=button&utm_source=affiliate_links&utm_content=https://github.com/platformsh/mercure-rocks-example" target="_blank" title="Deploy with Platform.sh"><img src="https://platform.sh/images/deploy/deploy-button-lg-blue.svg"></a>
-
-Make sure you change in `.platform/applications.yaml`
+Make sure you change in `.mercure/.environment`
 
 ```
 MERCURE_PUBLISHER_JWT_KEY='!ChangeMe!'
@@ -16,8 +14,7 @@ MERCURE_SUBSCRIBER_JWT_KEY='!ChangeMe!'
 ```
 
 You probably also want to disable the demo/ui in:
-`mercure/Caddyfile.platform_sh` and possibly allowing anonymous users.
-
+`mercure/Caddyfile.upsun` and possibly allowing anonymous users.
 
 ## Copyright
 
@@ -34,46 +31,58 @@ tar xvf mercure_{$MERCURE_VERSION}_Linux_x86_64.tar
 ```
 
 ## Add mount for DB (you can also use postgres etc..)
-`.platform.app.yaml`
+`.upsun/config.yaml`
 
 ```yaml
-mounts:
-    'db':
-        source: local
+applications:
+  mercure:
+    mounts:
+      'db':
+        source: storage
         source_path: db
 ```
 ## Make sure caching are request buffering are off
 
-`.platform/routes.yaml`
+`.upsun/config.yaml`
 ```yaml
-"https://mercure.{default}/":
+routes:
+  "https://mercure.{default}/":
     type: upstream
     upstream: "mercure:http"
     cache:
         enabled: false
 ```
 
-Andin `.platform.app.yaml`
+And in `.upsun/config.yaml`, in the `mercure` app definition
 
 ```yaml
-        locations:
-            /:
-                allow: false
-                passthru: true
-                request_buffering:
-                  enabled: false
+applications:
+  mercure:
+    web:
+      locations:
+        /:
+          allow: false
+          passthru: true
+          request_buffering:
+            enabled: false
+          headers:
+            Access-Control-Allow-Origin: "*"
 ```
 
-## Configuration (in the `variables.env` section:)
+## Configuration (in the `.upsun/config` file)
 
 ```bash
-SERVER_NAME=:$PORT
-MERCURE_PUBLISHER_JWT_KEY='!ChangeMe!'
-MERCURE_SUBSCRIBER_JWT_KEY='!ChangeMe!'
+applications:
+  mercure:
+    variables:
+      env:
+        SERVER_NAME=:8888
+        MERCURE_PUBLISHER_JWT_KEY='!ChangeMe!'
+        MERCURE_SUBSCRIBER_JWT_KEY='!ChangeMe!'
 ```
 
 ## Start command
 
 ```
-./mercure run -config Caddyfile.platform_sh
+./mercure run -config Caddyfile.upsun
 ```

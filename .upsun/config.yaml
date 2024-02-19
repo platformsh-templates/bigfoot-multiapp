@@ -39,7 +39,7 @@ services:
     type: postgresql:15
 
 applications:
-  # Complete list of all available properties: https://docs.platform.sh/create-apps/app-reference.html
+  # Complete list of all available properties: https://docs.upsun.com/create-apps/app-reference.html
   # A unique name for the app
   api:
     # The runtime the application uses.
@@ -108,9 +108,9 @@ applications:
       extensions: [ ctype, iconv, apcu, mbstring, sodium, xsl, pdo_pgsql ]
     # Information on the app's source code and operations that can be run on it.
     source:
-      # The path where the app code lives. Defaults to the directory of the .platform.app.yaml file. Useful for multi-app setups.
+      # The path where the app code lives. Defaults to the directory of the .upsun/config.yaml file. Useful for multi-app setups.
       root: api
-  # Complete list of all available properties: https://docs.platform.sh/create-apps/app-reference.html
+  # Complete list of all available properties: https://docs.upsun.com/create-apps/app-reference.html
 
   # A unique name for the app
   admin:
@@ -175,9 +175,9 @@ applications:
 
     # Information on the app's source code and operations that can be run on it.
     source:
-      # The path where the app code lives. Defaults to the directory of the .platform.app.yaml file. Useful for multi-app setups.
+      # The path where the app code lives. Defaults to the directory of the .upsun/config.yaml file. Useful for multi-app setups.
       root: admin
-  # Complete list of all available properties: https://docs.platform.sh/create-apps/app-reference.html
+  # Complete list of all available properties: https://docs.upsun.com/create-apps/app-reference.html
 
   # A unique name for the app
   gatsby:
@@ -222,9 +222,9 @@ applications:
         yarn build --prefix-paths
     # Information on the app's source code and operations that can be run on it.
     source:
-      # The path where the app code lives. Defaults to the directory of the .platform.app.yaml file. Useful for multi-app setups.
+      # The path where the app code lives. Defaults to the directory of the .upsun/config.yaml file. Useful for multi-app setups.
       root: gatsby
-  # Complete list of all available properties: https://docs.platform.sh/create-apps/app-reference.html
+  # Complete list of all available properties: https://docs.upsun.com/create-apps/app-reference.html
 
   # A unique name for the app
   mercure:
@@ -286,5 +286,5 @@ applications:
         tar xvzf $PLATFORM_CACHE_DIR/$FILE
     # Information on the app's source code and operations that can be run on it.
     source:
-      # The path where the app code lives. Defaults to the directory of the .platform.app.yaml file. Useful for multi-app setups.
+      # The path where the app code lives. Defaults to the directory of the .upsun/config.yaml file. Useful for multi-app setups.
       root: mercure/.config
